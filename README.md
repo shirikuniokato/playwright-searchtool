@@ -1,6 +1,6 @@
 # playwright-searchtool
 
-競合 EC サイトの市場調査スクリーンショットツール。Claude Code から `/market-research` コマンドで一発実行。
+Web サイトのマルチデバイス・フルページスクリーンショットツール。Claude Code から `/market-research` で調査を一発実行できる。
 
 ## セットアップ
 
@@ -12,15 +12,17 @@ npm run install-browser
 
 ## 使い方
 
-### スラッシュコマンド（推奨）
+### スラッシュコマンド
 
 Claude Code でプロジェクトを開き:
 
 ```
 /market-research アパレル EC
+/market-research SaaS LP デザイン
+/market-research ポートフォリオサイト
 ```
 
-WebSearch で競合サイトを検索 → URL リスト承認 → マルチデバイスのフルページスクリーンショットを自動撮影。
+WebSearch でサイトを検索 → URL リスト承認 → マルチデバイスのフルページスクリーンショットを自動撮影。
 
 ### 一括撮影（JSON）
 
@@ -32,10 +34,10 @@ node scripts/take-screenshots.mjs --sites sites.json
 
 ```json
 {
-  "outputDir": "./screenshots/apparel-ec",
+  "outputDir": "./screenshots/saas-lp",
   "sites": [
-    { "url": "https://example.com", "name": "example-store" },
-    { "url": "https://other.com", "name": "other-store" }
+    { "url": "https://example.com", "name": "example-site" },
+    { "url": "https://other.com", "name": "other-site" }
   ]
 }
 ```
@@ -45,16 +47,16 @@ node scripts/take-screenshots.mjs --sites sites.json
 ```bash
 node scripts/take-screenshots.mjs \
   --url "https://example.com" \
-  --name "example-store" \
-  --output-dir "./screenshots/apparel-ec"
+  --name "example-site" \
+  --output-dir "./screenshots/saas-lp"
 ```
 
 ## 出力
 
 ```
 screenshots/
-└── apparel-ec/
-    └── example-store/
+└── saas-lp/
+    └── example-site/
         ├── desktop.png   (1280x800)
         ├── tablet.png    (768x1024)
         └── mobile.png    (375x667)

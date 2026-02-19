@@ -1,6 +1,6 @@
 # playwright-searchtool
 
-競合 EC サイトの市場調査スクリーンショットツール。
+Web サイトのマルチデバイス・フルページスクリーンショットツール。
 
 ## セットアップ
 
@@ -28,8 +28,8 @@ JSON 形式:
 {
   "outputDir": "./screenshots/topic-slug",
   "sites": [
-    { "url": "https://example.com", "name": "example-store" },
-    { "url": "https://other.com", "name": "other-store" }
+    { "url": "https://example.com", "name": "example-site" },
+    { "url": "https://other.com", "name": "other-site" }
   ]
 }
 ```
@@ -39,7 +39,7 @@ JSON 形式:
 ```bash
 node scripts/take-screenshots.mjs \
   --url "https://example.com" \
-  --name "example-store" \
+  --name "example-site" \
   --output-dir "./screenshots/topic-slug"
 ```
 
@@ -54,8 +54,8 @@ node scripts/take-screenshots.mjs \
 
 ## 命名規則
 
-- `topic-slug`: 調査テーマの kebab-case（例: `apparel-ec`, `organic-food`）
-- `name`: サイト名の kebab-case（例: `uniqlo`, `zozo-town`）
+- `topic-slug`: 調査テーマの kebab-case（例: `apparel-ec`, `saas-lp`, `portfolio-sites`）
+- `name`: サイト名の kebab-case（例: `example-site`, `my-service`）
 
 ## デバイスサイズ
 
