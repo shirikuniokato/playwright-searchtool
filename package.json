@@ -1,0 +1,14 @@
+{
+  "name": "playwright-searchtool",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "競合市場調査スクリーンショットツール",
+  "scripts": {
+    "screenshot": "node scripts/take-screenshots.mjs",
+    "install-browser": "npx playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "^1.50.0"
+  }
+}
